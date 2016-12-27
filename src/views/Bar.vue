@@ -36,7 +36,6 @@ export default {
 #barChart {
   // width: 400px;
   width: 100%;
-  padding: 15px;
-  height: 500px;
+  height: 240px;
 }
 </style>

@@ -50,6 +50,7 @@ export default {
     background: #fff;
     box-sizing: border-box;
     border-bottom: 1px solid #f1f1f1;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.12), 0 10px 12px 0 rgba(170,182,206,.2), inset 0 -1px 0 0 rgba(255,255,255,.3);
 }
 .gm-header-logo {
     padding-top: .5rem;

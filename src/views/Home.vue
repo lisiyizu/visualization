@@ -19,9 +19,6 @@
 
     </footer>
 </div>
-<!-- <div class="welcome-center">
-    <router-view></router-view>
-</div> -->
 </template>
 
 <script>
@@ -45,6 +42,12 @@ export default {
       }, {
         title: '中国地图',
         link: '/map'
+      }, {
+        title: '堆积柱状图',
+        link: '/stackbar'
+      }, {
+        title: '访问流量分析',
+        link: '/traffic-analysis'
       }]
     }
   },
@@ -57,16 +60,17 @@ export default {
 <style lang="less">
 .page-wrapper {
     margin: 5rem auto;
-    width: 1000px;
+    width: 100%;
     position: relative;
     .page-side {
         position: fixed;
         top: 5rem;
-        width: 140px;
+        width: 220px;
+        height: calc(100% - 5rem);
     }
     .page-content {
-        margin-left: 150px;
-        background-color: #fff;
+        margin-left: 230px;
+        // background-color: #fff;
         padding: 20px;
     }
 }
@@ -76,9 +80,5 @@ export default {
     .gm-sidebar-nav-text {
         font-size: 14px;
     }
-}
-.welcome-center {
-    width: 600px;
-    min-height: 366px;
 }
 </style>

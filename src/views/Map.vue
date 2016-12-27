@@ -12,13 +12,14 @@ export default {
     }
   },
   mounted () {
+    let self = this
     this.$nextTick(function () {
       this.drawPie('mapChart')
       let resizeTimer = null
       window.onresize = function () {
         if (resizeTimer) clearTimeout(resizeTimer)
         resizeTimer = setTimeout(() => {
-          this.drawPie('mapChart')
+          self.drawPie('mapChart')
         }, 100)
       }
     })
