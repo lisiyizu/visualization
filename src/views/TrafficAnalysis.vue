@@ -3,11 +3,17 @@
   <div class="grid" v-for="(item, index) in styObjs" :style="item">
     <div class="grid-inner">
       <div class="chart-box">
-        <div v-if="charts[index]['type'] === 'pie'">
-          <bar></bar>
+        <div v-if="charts[index]['type'] === 'bar'">
+          <bar :style="{height: item.height}"></bar>
         </div>
-        <div v-else-if="charts[index]['type'] === 'B'">
-
+        <div v-else-if="charts[index]['type'] === 'barpie'">
+          <bar-pie :style="{height: item.height}"></bar-pie>
+        </div>
+        <div v-else-if="charts[index]['type'] === 'pie'">
+          <pie :style="item"></pie>
+        </div>
+        <div v-else-if="charts[index]['type'] === 'line-chart'">
+          <line-chart :style="item"></line-chart>
         </div>
         <div v-else>
           <div class="chart-box-title" v-if="charts[index]['title']">
@@ -26,6 +32,9 @@
 <script>
 import { generateChart } from '../utils/chart'
 import Bar from './Bar'
+import BarPie from './BarPie'
+import Pie from './Pie'
+import LineChart from './Line'
 export default {
   data () {
     return {
@@ -47,7 +56,8 @@ export default {
         row: 0,
         sizeX: 5,
         col: 7,
-        sizeY: 4
+        sizeY: 4,
+        type: 'bar'
       }, {
         row: 2,
         sizeX: 3,
@@ -59,12 +69,14 @@ export default {
         row: 4,
         sizeX: 6,
         col: 0,
-        sizeY: 5
+        sizeY: 5,
+        type: 'line-chart'
       }, {
         row: 4,
         sizeX: 6,
         col: 6,
-        sizeY: 5
+        sizeY: 5,
+        type: 'pie'
       }, {
         row: 9,
         sizeX: 6,
@@ -82,7 +94,10 @@ export default {
     this.drawGridsWrapper()
   },
   components: {
-    Bar
+    Bar,
+    BarPie,
+    Pie,
+    LineChart
   },
   mounted () {
 
@@ -105,29 +120,17 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 30px 20px 20px 30px;
+    padding: 5px;
     width: auto;
     height: auto;
-    background-color: #fff;
+    // background-color: #fff;
     border-radius: 6px;
     text-align: center;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 10px;
-      height: 100%;
-      background-color: #f5f5f5;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
+    .grid-inner {
       width: 100%;
-      height: 10px;
-      background-color: #f5f5f5;
+      height: 100%;
+      background-color: #fff;
+      overflow: hidden;
     }
     .chart-box-title {
       font-weight: 600;

@@ -1,14 +1,18 @@
 <template lang="html">
-<div id="barPieChart"></div>
+<div id="barPieChart" :style="style" class="chart-container"></div>
 </template>
 
 <script>
 import echarts from 'echarts'
 export default {
+  name: 'barpie',
   data () {
     return {
       barChartOption: null
     }
+  },
+  props: {
+    style: Object
   },
   mounted () {
     this.$nextTick(function () {
@@ -138,10 +142,5 @@ export default {
 </script>
 
 <style lang="less">
-#barPieChart {
-  // width: 400px;
-  width: 100%;
-  padding: 15px;
-  height: 500px;
-}
+
 </style>

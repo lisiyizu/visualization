@@ -70,7 +70,7 @@ export default {
     }
     .page-content {
         margin-left: 230px;
-        // background-color: #fff;
+        min-height: 500px;
         padding: 20px;
     }
 }
