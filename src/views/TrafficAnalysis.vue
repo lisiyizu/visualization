@@ -4,10 +4,7 @@
     <div class="grid-inner">
       <div class="chart-box">
         <div v-if="charts[index]['type'] === 'bar'">
-          <bar :style="{height: item.height}"></bar>
-        </div>
-        <div v-else-if="charts[index]['type'] === 'barpie'">
-          <bar-pie :style="{height: item.height}"></bar-pie>
+          <bar></bar>
         </div>
         <div v-else-if="charts[index]['type'] === 'pie'">
           <pie :style="item"></pie>
@@ -32,7 +29,6 @@
 <script>
 import { generateChart } from '../utils/chart'
 import Bar from './Bar'
-import BarPie from './BarPie'
 import Pie from './Pie'
 import LineChart from './Line'
 export default {
@@ -95,7 +91,6 @@ export default {
   },
   components: {
     Bar,
-    BarPie,
     Pie,
     LineChart
   },

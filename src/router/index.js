@@ -6,10 +6,10 @@ import Bar from '../views/Bar'
 import Line from '../views/Line'
 import Map from '../views/Map'
 import Pie from '../views/Pie'
-import BarPie from '../views/BarPie'
-import StackBar from '../views/StackBar'
 // 访问流量分析
 import TrafficAnalysis from '../views/TrafficAnalysis'
+// 更新表
+import Update from '../views/Update'
 
 Vue.use(VueRouter)
 
@@ -30,14 +30,11 @@ const routes = [{
     path: '/pie',
     component: Pie
   }, {
-    path: '/barpie',
-    component: BarPie
-  }, {
-    path: '/stackbar',
-    component: StackBar
-  }, {
     path: '/traffic-analysis',
     component: TrafficAnalysis
+  }, {
+    path: '/update',
+    component: Update
   }]
 }]
 const router = new VueRouter({

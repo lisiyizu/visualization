@@ -37,17 +37,14 @@ export default {
         title: '折线图',
         link: '/line'
       }, {
-        title: '柱状饼混搭',
-        link: '/barpie'
-      }, {
         title: '中国地图',
         link: '/map'
       }, {
-        title: '堆积柱状图',
-        link: '/stackbar'
-      }, {
         title: '访问流量分析',
         link: '/traffic-analysis'
+      }, {
+        title: '渲染后更新表',
+        link: '/update'
       }]
     }
   },
